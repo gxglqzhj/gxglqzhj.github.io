@@ -3,7 +3,7 @@ function login() {
     var password = document.getElementById('password').value;
 
     // 模拟登录验证
-    if (username === 'admin' && password === 'admin123') {
+    if (username === 'wangkai' && password === 'wangkai123') {
         showAdminSection();
     } else if (username === 'user' && password === 'user123') {
         showUserSection();
