@@ -1,44 +1,107 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
 body {
     font-family: Arial, sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 50px; /* 为版权信息容器预留空间 */
+
 }
 
-.container {
-    width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.form-group {
-    margin-bottom: 10px;
-}
-
-.form-group label {
-    display: block;
-}
-
-.form-group input[type="text"],
-.form-group input[type="password"] {
-    width: 100%;
-    padding: 5px;
-}
-
-.form-group button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-}
-
-.admin-section,
-.user-section {
-    display: none;
-    margin-top: 20px;
+header {
+    background-color: white;
+    color: black;
     padding: 10px;
-    border: 1px solid #ccc;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+
 }
 
-.admin-section h3,
-.user-section h3 {
-    margin-top: 0;
+nav {
+    background-color: #333333;
+    padding: 10px;
+    text-align: center;
+
 }
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+    color: #fff;
+
+}
+
+nav ul li a {
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+a {
+    color: lightskyblue;
+    padding: 10px;
+    text-align: center;
+}
+
+section {
+    padding: 0%;
+    margin-left: 20px;
+}
+
+.column {
+    float: left;
+    width: 33.33%;
+    box-sizing: border-box;
+    background-color: white;
+}
+.column nav {
+    background-color: white;
+}
+.column nav ul{
+    display: inline;
+    color: #111111;
+
+}
+.column nav ul li{
+
+    margin-right: 10px;
+    color: #fff;
+}
+.column nav ul li a{
+    color: #111111;
+}
+.conter {
+    padding: 0px;
+    text-align: center;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #333;
+    text-align: center;
+    line-height: 50px;
+    font-size: 14px;
+    color: white;
+}
+
