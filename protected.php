@@ -1,13 +1,3 @@
-<?php
-session_start();
-
-// 检查登录状态
-if (!isset($_SESSION["loggedIn"]) || $_SESSION["loggedIn"] !== true) {
-    // 用户未登录，跳转回登录页面
-    header("index.html");
-    exit;
-}
-?>
 
 <!DOCTYPE html>
 <html>
