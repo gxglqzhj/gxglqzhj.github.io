@@ -1,0 +1,42 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+
+}
+
+h1 {
+    text-align: center;
+}
+
+.notice {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    float: left;
+}
+
+.notice-title {
+    font-weight: bold;
+}
+
+.notice-date {
+    font-style: italic;
+    color: #666;
+}
+
+.notice-content {
+    margin-top: 10px;
+
+}
+
+.notice-link {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.notice-link:hover {
+    text-decoration: underline;
+
+}

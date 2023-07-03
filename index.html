@@ -1,38 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>专利掠夺者服务平台</title>
-  <link rel="stylesheet" type="text/css" href="sty.css">
+  <title>Login Page</title>
+  <link rel="stylesheet" type="text/css" href="styley.css">
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
 <body>
 <div class="container">
-  <h2></h2>
-  <div id="login-section">
-    <div class="form-group">
-      <label for="username">用户名：</label>
-      <input type="text" id="username">
-    </div>
-    <div class="form-group">
-      <label for="password">密码：</label>
-      <input type="password" id="password">
-    </div>
-    <div class="form-group">
-      <button onclick="login()">登录</button>
-    </div>
-  </div>
-
-  <div id="admin-section" class="admin-section">
-    <h3>一般用户</h3>
-    <a href="protected.html">组员</a>
-  </div>
-
-  <div id="user-section" class="user-section">
-    <h3>普通用户权限</h3>
-    <p>这里可以展示普通用户特有的功能和内容。</p>
-  </div>
+  <h1>Login</h1>
+  <form id="loginForm">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username">
+    <br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password">
+    <br>
+    <input type="button" value="Login" onclick="login()">
+    <br>
+    <div id="google_translate_element"></div>
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+      }
+    </script>
+  </form>
+  <div id="errorMessage" class="error"></div>
 </div>
-
 <script src="script.js"></script>
+
 </body>
 </html>
+

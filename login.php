@@ -1,31 +1,38 @@
 <?php
 session_start();
 
-// 定义有效的用户名和密码
-$validUsername = "admin";
-$validPassword = "password";
+// 固定的账号密码及其对应的权限等级
+$users = array(
+    array('username' => 'wangkai', 'password' => 'wangkai', 'role' => 'admin'),
+    array('username' => '322', 'password' => '322', 'role' => 'user')
+);
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST["username"];
-    $password = $_POST["password"];
+$response = array();
 
-    // 检查用户名和密码是否匹配
-    if ($username === $validUsername && $password === $validPassword) {
-        // 设置登录状态
-        $_SESSION["loggedIn"] = true;
-        $_SESSION["username"] = $username;
+if (isset($_GET['username']) && isset($_GET['password'])) {
+    $username = $_GET['username'];
+    $password = $_GET['password'];
 
-        // 跳转到受保护的页面
-        header("Location: protected.php");
-        exit;
-    } else {
-        // 登录失败，跳转回登录页面
-        header("Location: index.html");
-        exit;
+    // 验证用户名和密码
+    foreach ($users as $user) {
+        if ($user['username'] === $username && $user['password'] === $password) {
+            // 登录成功，将用户信息保存在 session 中
+            $_SESSION['username'] = $user['username'];
+            $_SESSION['role'] = $user['role'];
+            $response['success'] = true;
+            break;
+        }
+    }
+
+    if (!$response['success']) {
+        $response['success'] = false;
+        $response['message'] = 'Invalid username or password.';
     }
 } else {
-    // 非法访问，跳转回登录页面
-    header("Location: index.html");
-    exit;
+    $response['success'] = false;
+    $response['message'] = 'Username and password are required.';
 }
+
+header('Content-Type: application/json');
+echo json_encode($response);
 ?>
