@@ -1,0 +1,36 @@
+name: Deploy Hexo Blog to Server
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 14
+
+    - name: Install dependencies
+      run: |
+        npm install -g hexo-cli
+        npm install
+
+    - name: Generate static files
+      run: |
+        hexo clean
+        hexo generate
+
+    - name: Deploy to server
+      uses: easingthemes/ssh-deploy@v2.0.4
+      with:
+        ssh-private-key: ${{ secrets.SERVER_SSH_PRIVATE_KEY }}
+        remote-user: ${{ secrets.SERVER_USER }}
+        host: ${{ secrets.SERVER_HOST }}
+        local-path: ./public
+        remote-path: /path/to/your/blog/on/server
