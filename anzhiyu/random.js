@@ -1,3 +1,3 @@
-var posts=["cn/NUdRGTH2/","cn/7xbit/","cn/j1s9j/","cn/7x6c2/","cn/7xbi2/","cn/xh01w/","cn/8dj0c/"];function toRandomPost(){
+var posts=["cn/NUdRGTH2/","cn/7xbit/","cn/j1s9j/","cn/xh01w/","cn/7x6c2/","cn/7xbi2/","cn/8dj0c/"];function toRandomPost(){
     pjax.loadUrl('/'+posts[Math.floor(Math.random() * posts.length)]);
   };
